@@ -73,31 +73,35 @@ const Contact = () => {
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                             <div className="px-6 py-8 sm:p-10">
                                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
-                                <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+                                <form action="https://formsubmit.co/Adaoranasir@gmail.com" method="POST" className="grid grid-cols-1 gap-y-6">
+                                    <input type="hidden" name="_subject" value="New Message from CMPM Website Contact Form" />
+                                    <input type="hidden" name="_template" value="table" />
+                                    <input type="hidden" name="_captcha" value="false" />
+
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                         <div>
                                             <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">First name</label>
                                             <div className="mt-1">
-                                                <input type="text" name="first-name" id="first-name" autoComplete="given-name" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                <input type="text" name="first-name" id="first-name" autoComplete="given-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
                                             </div>
                                         </div>
                                         <div>
                                             <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">Last name</label>
                                             <div className="mt-1">
-                                                <input type="text" name="last-name" id="last-name" autoComplete="family-name" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                <input type="text" name="last-name" id="last-name" autoComplete="family-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
                                             </div>
                                         </div>
                                     </div>
                                     <div>
                                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                                         <div className="mt-1">
-                                            <input type="email" name="email" id="email" autoComplete="email" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                            <input type="email" name="email" id="email" autoComplete="email" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
                                         </div>
                                     </div>
                                     <div>
                                         <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
                                         <div className="mt-1">
-                                            <textarea id="message" name="message" rows="4" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" placeholder="How can we pray for you?"></textarea>
+                                            <textarea id="message" name="message" rows="4" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" placeholder="How can we pray for you?"></textarea>
                                         </div>
                                     </div>
                                     <div>
