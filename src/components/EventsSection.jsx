@@ -3,27 +3,27 @@ import { Calendar, MapPin, Clock } from 'lucide-react'
 const events = [
     {
         id: 1,
-        title: "Prophetic Impact Service",
+        title: "Sunday Service",
         date: "Every Sunday",
-        time: "8:00 AM",
+        time: "8:30 AM",
         location: "CMPM HQ, Jos",
         description: "Join us for a time of intense worship, prophetic declarations, and the undiluted Word of God."
     },
     {
         id: 2,
-        title: "Miracle & Healing Service",
-        date: "Wednesdays",
-        time: "5:00 PM",
+        title: "Marathon Prayer",
+        date: "Tuesdays",
+        time: "4:30 PM",
         location: "CMPM HQ, Jos",
-        description: "Experience the healing power of Jesus. Come with your expectations and go back likely."
+        description: "A time of intercession and spiritual warfare. Ignite your prayer life."
     },
     {
         id: 3,
-        title: "Night of Fire",
-        date: "Last Friday of the Month",
-        time: "10:00 PM",
+        title: "Breakthrough Deliverance Service",
+        date: "Saturdays",
+        time: "7:00 AM",
         location: "CMPM HQ, Jos",
-        description: "A night of prayer, warfare, and spiritual empowerment. Ignite your spiritual fire."
+        description: "Experience total freedom and deliverance from every oppression of the enemy."
     }
 ]
 
