@@ -13,7 +13,7 @@ const Footer = () => {
                             <img src={logo} alt="CMPM Logo" className="h-16 w-auto brightness-200 grayscale-0 opacity-90" />
                             <div>
                                 <h3 className="text-xl font-heading font-bold tracking-tight text-white">Christ Messengers</h3>
-                                <p className="text-[0.6rem] text-primary-500 font-bold tracking-[0.25em] uppercase">Prophetic Ministry</p>
+                                <p className="text-[0.6rem] text-primary-500 font-bold tracking-[0.25em] uppercase">Prophetic Fire Ministry</p>
                             </div>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed font-light">
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 font-light">
-                    <p>&copy; {new Date().getFullYear()} Christ Messengers Prophetic Ministry. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Christ Messengers Prophetic Fire Ministry. All rights reserved.</p>
                     <p className="flex items-center gap-1">Designed with <Heart className="h-3 w-3 text-red-900 fill-current" /> by CMPM Tech Team</p>
                 </div>
             </div>

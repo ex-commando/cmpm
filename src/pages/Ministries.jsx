@@ -79,7 +79,7 @@ const Ministries = () => {
                             <h3 className="text-4xl font-bold text-gray-900 mb-6">House of Fire</h3>
                             <div className="prose prose-lg text-gray-600">
                                 <p className="mb-4">
-                                    Christ Messengers Prophetic Ministry is more than a church; it is a movement — a divine firestorm of revivalists, intercessors, prophets, and kingdom builders.
+                                    Christ Messengers Prophetic Fire Ministry is more than a church; it is a movement — a divine firestorm of revivalists, intercessors, prophets, and kingdom builders.
                                 </p>
                                 <p>
                                     We burn with passion for Jesus and long to see every life we touch set ablaze for God.

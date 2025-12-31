@@ -49,7 +49,7 @@ const About = () => {
                         <div className="prose prose-lg prose-indigo text-gray-600">
                             <h3 className="text-4xl font-bold text-gray-900 mb-8 font-heading">Our Roots</h3>
                             <p className="lead text-lg mb-6">
-                                Christ Messengers Prophetic Ministry, widely known as <strong className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">House of Fire</strong>, was birthed in 2011 as a campus fellowship.
+                                Christ Messengers Prophetic Fire Ministry, widely known as <strong className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">House of Fire</strong>, was birthed in 2011 as a campus fellowship.
                             </p>
                             <p className="mb-6">
                                 Starting at the University of Jos and Université des Sciences Appliquées et de Management (USAM) in Benin Republic, it has grown into a full-fledged ministry based in Jos, Plateau State, Nigeria.

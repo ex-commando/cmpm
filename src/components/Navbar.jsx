@@ -27,7 +27,7 @@ const Navbar = () => {
                             <img className="h-20 w-auto transition-transform hover:scale-105" src={logo} alt="CMPM Logo" />
                             <div className="hidden md:block">
                                 <h1 className="text-2xl font-bold text-gray-900 leading-none">Christ Messengers</h1>
-                                <p className="text-xs text-primary-600 font-semibold tracking-wider">PROPHETIC MINISTRY</p>
+                                <p className="text-xs text-primary-600 font-semibold tracking-wider">PROPHETIC FIRE MINISTRY</p>
                             </div>
                         </Link>
                     </div>

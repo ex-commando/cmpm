@@ -8,33 +8,33 @@ const Donate = () => {
     const accounts = {
         NGN: {
             currency: 'Naira Account',
-            bank: 'First Bank',
-            name: 'Christ Messengers Prophetic Ministry',
-            number: '2033033502',
+            bank: 'OPAY',
+            name: 'IRUOBE MAXWELL',
+            number: '7035084558',
             amount: 'Naira (NGN)',
             icon: <Banknote className="w-6 h-6 text-green-600" />
         },
         USD: {
             currency: 'Dollar Account',
-            bank: 'GT Bank',
-            name: 'Christ Messengers Prophetic Ministry',
-            number: '0000000000',
+            bank: 'PENDING',
+            name: 'Christ Messengers Prophetic Fire Ministry',
+            number: 'COMINGSOON',
             amount: 'US Dollar (USD)',
             icon: <p className="font-bold text-green-600 text-xl">$</p>
         },
         EUR: {
             currency: 'Euro Account',
-            bank: 'GT Bank',
-            name: 'Christ Messengers Prophetic Ministry',
-            number: '0000000000',
+            bank: 'PENDING',
+            name: 'Christ Messengers Prophetic Fire Ministry',
+            number: 'COMINGSOON',
             amount: 'Euro (EUR)',
             icon: <p className="font-bold text-blue-600 text-xl">€</p>
         },
         GBP: {
             currency: 'Pounds Account',
             bank: 'GT Bank',
-            name: 'Christ Messengers Prophetic Ministry',
-            number: '0000000000',
+            name: 'PENDING',
+            number: 'COMINGSON',
             amount: 'British Pound (GBP)',
             icon: <p className="font-bold text-purple-600 text-xl">£</p>
         },
@@ -42,7 +42,7 @@ const Donate = () => {
             currency: 'Crypto Wallet',
             bank: 'USDT (TRC20)',
             name: 'CMPM Wallet',
-            number: '0x000000000000000000000000000',
+            number: 'COMINGSON',
             amount: 'Crypto (USDT)',
             icon: <Bitcoin className="w-6 h-6 text-orange-500" />
         }
@@ -118,8 +118,8 @@ const Donate = () => {
                                     key={key}
                                     onClick={() => setActiveTab(key)}
                                     className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${activeTab === key
-                                            ? 'bg-gray-900 text-white border-gray-900 shadow-lg scale-105'
-                                            : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                                        ? 'bg-gray-900 text-white border-gray-900 shadow-lg scale-105'
+                                        : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                                         }`}
                                 >
                                     {key === 'CRYPTO' ? 'Crypto' : key}

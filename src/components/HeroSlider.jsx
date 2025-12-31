@@ -44,7 +44,7 @@ const HeroSlider = ({ images }) => {
                     >
                         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 drop-shadow-lg">
                             Christ Messengers <br />
-                            <span className="text-primary-500">Prophetic Ministry</span>
+                            <span className="text-primary-500">Prophetic Fire Ministry</span>
                         </h1>
                         <p className="mt-4 text-xl sm:text-2xl text-gray-200 max-w-2xl mx-auto font-light drop-shadow-md">
                             House of Fire: Building people of fire, impacting lives and changing destinies.

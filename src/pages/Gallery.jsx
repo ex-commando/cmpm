@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Sparkles, Image as ImageIcon, X } from 'lucide-react'
+import { Sparkles, Image as ImageIcon, X, Flame } from 'lucide-react'
 import gallery1 from '../assets/gallery-1.jpg'
 import gallery2 from '../assets/gallery-2.jpg'
 import gallery3 from '../assets/gallery-3.jpg'
@@ -30,7 +30,7 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null)
 
     return (
-        <div className="bg-gray-50 min-h-screen pb-24">
+        <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black min-h-screen pb-24 text-gray-100">
             {/* Gallery Hero */}
             <div className="bg-gray-900 py-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
@@ -41,11 +41,15 @@ const Gallery = () => {
                         <ImageIcon className="h-4 w-4 text-secondary-400" />
                         <span className="text-xs font-bold text-secondary-200 tracking-wider uppercase">Visual Testimony</span>
                     </div>
-                    <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl text-shadow-lg font-heading">
-                        Moments of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Fire</span>
+                    <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl text-shadow-lg font-heading flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <span>Moments of</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 flex items-center gap-2">
+                            Fire
+                            <Flame className="h-8 w-8 sm:h-12 sm:w-12 text-orange-500 animate-flicker drop-shadow-lg" />
+                        </span>
                     </h1>
                     <p className="mt-4 text-xl text-gray-300 max-w-xl mx-auto font-light">
-                        Glimpses into the move of God at Christ Messengers Prophetic Ministry.
+                        Glimpses into the move of God at Christ Messengers Prophetic Fire Ministry.
                     </p>
                 </div>
             </div>

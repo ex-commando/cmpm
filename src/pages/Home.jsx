@@ -98,7 +98,7 @@ const Home = () => {
                     </div>
 
                     <blockquote className="text-3xl md:text-6xl font-heading font-normal italic text-white leading-tight mb-12 drop-shadow-2xl">
-                        "Just as people in the end times are drawn to the mountain of the Lord for truth... Christ Messengers Prophetic Ministry is called to be a <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-300 to-secondary-500">modern-day Zion</span>."
+                        "Just as people in the end times are drawn to the mountain of the Lord for truth... Christ Messengers Prophetic Fire Ministry is called to be a <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-300 to-secondary-500">modern-day Zion</span>."
                     </blockquote>
 
                     <div className="flex justify-center">
