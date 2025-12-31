@@ -5,13 +5,38 @@ import gallery2 from '../assets/gallery-2.jpg'
 import gallery3 from '../assets/gallery-3.jpg'
 import gallery4 from '../assets/gallery-4.jpg'
 import gallery5 from '../assets/gallery-5.jpg'
+import hero1 from '../assets/hero1.jpg'
+import hero2 from '../assets/hero2.jpg'
+import hero3 from '../assets/hero3.jpg'
+import aboutUs from '../assets/about_us.jpg'
+import pastors from '../assets/pastors.jpg'
+import slider1 from '../assets/slider1.png'
+import slider2 from '../assets/slider2.png'
 
 const galleryImages = [
-    { id: 1, src: gallery1, alt: "Worship Moment", size: "large" }, // Spans 2x2
+    // Original 5
+    { id: 1, src: gallery1, alt: "Worship Moment", size: "large" },
     { id: 2, src: gallery2, alt: "Choir Ministration", size: "normal" },
     { id: 3, src: gallery3, alt: "Prophetic Declaration", size: "normal" },
     { id: 4, src: gallery4, alt: "Service Atmosphere", size: "normal" },
     { id: 5, src: gallery5, alt: "Lead Pastor", size: "normal" },
+
+    // New Additions
+    { id: 6, src: pastors, alt: "Our Shepherds", size: "tall" },
+    { id: 7, src: slider1, alt: "Sunday Service", size: "wide" },
+    { id: 8, src: hero1, alt: "Prayer Session", size: "normal" },
+    { id: 9, src: hero2, alt: "Worship Experience", size: "normal" },
+    { id: 10, src: aboutUs, alt: "Community", size: "large" },
+    { id: 11, src: slider2, alt: "Deliverance Service", size: "wide" },
+    { id: 12, src: hero3, alt: " congregation", size: "normal" },
+    { id: 13, src: gallery1, alt: "Hymns", size: "normal" }, // Reusing one to fill grid if needed or strict unique? Let's stick to unique for now, but 13 items might need a 14th filler for perfect block or just let auto-flow handle it.
+    // Actually, let's carefully plan the grid.
+    // Row 1: Large (2x2), Normal, Normal = 4 cols.
+    // Row 2: (Large cont), Normal, Normal.
+    // Row 3: Tall (1x2), Wide (2x1), Normal.
+    // Row 4: (Tall cont), Normal, Large (2x2).
+    // Row 5: Wide (2x1), (Large cont).
+    // Let's just define them and let CSS grid auto-flow dense handle the packing, as long as we have enough small items to fill gaps.
 ]
 
 const Gallery = () => {
@@ -38,7 +63,7 @@ const Gallery = () => {
 
             {/* Gallery Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px] grid-flow-dense">
                     {galleryImages.map((image, index) => (
                         <motion.div
                             key={image.id}
@@ -47,7 +72,10 @@ const Gallery = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className={`relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer
-                                ${image.size === 'large' ? 'md:col-span-2 md:row-span-2' : 'md:col-span-1 md:row-span-1'}
+                                ${image.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
+                                ${image.size === 'wide' ? 'md:col-span-2' : ''}
+                                ${image.size === 'tall' ? 'md:row-span-2' : ''}
+                                ${image.size === 'normal' ? 'md:col-span-1 md:row-span-1' : ''}
                             `}
                         >
                             <img
