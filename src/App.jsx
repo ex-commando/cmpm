@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Ministries from './pages/Ministries'
 import Contact from './pages/Contact'
+import Gallery from './pages/Gallery'
 import Donate from './pages/Donate'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="ministries" element={<Ministries />} />
+                <Route path="gallery" element={<Gallery />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="donate" element={<Donate />} />
             </Route>
