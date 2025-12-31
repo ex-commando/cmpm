@@ -37,10 +37,7 @@ const Home = () => {
                                 Igniting <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-800">Spiritual Fire</span>
                             </h2>
-                            {/* Giant Background Flame */}
-                            <div className="absolute -top-40 -left-40 z-0 opacity-5 pointer-events-none animate-pulse-slow">
-                                <Flame className="h-[800px] w-[800px] text-primary-600 fill-primary-600" />
-                            </div>
+                            {/* Giant Background Flame - Removed */}
 
                             <p className="text-xl text-gray-600 leading-relaxed font-light border-l-4 border-primary-200 pl-6">
                                 We are committed to raising a generation of firebrand believers passionate about the <span className="font-semibold text-primary-700">presence of God</span>, purity of life, prophetic accuracy, and kingdom prosperity.
@@ -50,7 +47,7 @@ const Home = () => {
                                 <Link to="/about" className="px-8 py-4 rounded-full bg-gray-900 text-white font-bold text-sm uppercase tracking-widest hover:bg-primary-700 transition-all hover:shadow-lg hover:-translate-y-1 flex items-center gap-2 group">
                                     Read Our Story <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
-                                <a href="https://youtube.com" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-gray-200 text-gray-900 font-bold text-sm uppercase tracking-widest hover:border-primary-600 hover:text-primary-600 transition-all flex items-center gap-2 group">
+                                <a href="https://www.youtube.com/@christpowerchurch" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full border border-gray-200 text-gray-900 font-bold text-sm uppercase tracking-widest hover:border-primary-600 hover:text-primary-600 transition-all flex items-center gap-2 group">
                                     <Play className="h-4 w-4 fill-current" /> Watch Video
                                 </a>
                             </div>
@@ -86,16 +83,12 @@ const Home = () => {
             {/* Events Section */}
             <EventsSection />
 
-
-
             {/* Latest Sermons */}
             <LatestSermons />
 
             {/* Quote Parallax Section */}
-            <div className="relative py-40 bg-gray-900 overflow-hidden">
-                <div className="absolute inset-0 bg-fixed bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${hero3})` }}></div>
+            <div className="relative py-40 bg-fixed bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${hero3})` }}>
                 <div className="absolute inset-0 bg-primary-950/80 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
 
                 <div className="relative max-w-5xl mx-auto text-center px-4 z-10">
                     <div className="inline-block p-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8">
