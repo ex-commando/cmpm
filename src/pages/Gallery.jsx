@@ -52,7 +52,7 @@ const Gallery = () => {
 
             {/* Gallery Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px] grid-flow-dense">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {galleryImages.map((image, index) => (
                         <motion.div
                             key={image.id}
@@ -61,12 +61,7 @@ const Gallery = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             onClick={() => setSelectedImage(image)}
-                            className={`relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer
-                                ${image.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                                ${image.size === 'wide' ? 'md:col-span-2' : ''}
-                                ${image.size === 'tall' ? 'md:row-span-2' : ''}
-                                ${image.size === 'normal' ? 'md:col-span-1 md:row-span-1' : ''}
-                            `}
+                            className="relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer h-80 w-full"
                             layoutId={`gallery-img-${image.id}`}
                         >
                             <img
