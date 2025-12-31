@@ -1,6 +1,28 @@
-import { MapPin, Phone, Mail, Clock, Globe } from 'lucide-react'
+import { useState } from 'react'
+import { MapPin, Phone, Mail, Clock, Globe, Upload, Heart } from 'lucide-react'
 
 const Contact = () => {
+    const [activeTab, setActiveTab] = useState('prayer')
+    const [fileName, setFileName] = useState('')
+    const [fileError, setFileError] = useState('')
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0]
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) { // 5MB
+                setFileError('File size exceeds 5MB')
+                setFileName('')
+                e.target.value = '' // Clear input
+            } else {
+                setFileError('')
+                setFileName(file.name)
+            }
+        } else {
+            setFileName('')
+            setFileError('')
+        }
+    }
+
     return (
         <div className="bg-gray-50 min-h-screen">
             {/* Header */}
@@ -39,7 +61,8 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="text-lg font-bold text-gray-900">Call Us</h3>
-                                <p className="mt-1 text-gray-600">+234 123 456 7890</p>
+                                <p className="mt-1 text-gray-600">+234 703 508 4558</p>
+                                <p className="text-gray-600">+234 706 847 3984</p>
                                 <p className="text-sm text-gray-400 mt-2">Mon - Fri, 9am - 5pm</p>
                             </div>
                         </div>
@@ -71,45 +94,159 @@ const Contact = () => {
                     {/* Contact Form */}
                     <div className="lg:col-span-2">
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                            <div className="px-6 py-8 sm:p-10">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
-                                <form action="https://formsubmit.co/Adaoranasir@gmail.com" method="POST" className="grid grid-cols-1 gap-y-6">
-                                    <input type="hidden" name="_subject" value="New Message from CMPM Website Contact Form" />
-                                    <input type="hidden" name="_template" value="table" />
-                                    <input type="hidden" name="_captcha" value="false" />
+                            {/* Tabs */}
+                            <div className="flex border-b border-gray-200">
+                                <button
+                                    onClick={() => setActiveTab('prayer')}
+                                    className={`flex-1 py-4 px-6 text-center text-sm font-medium transition-colors duration-200 focus:outline-none flex items-center justify-center gap-2 ${activeTab === 'prayer'
+                                        ? 'border-b-2 border-primary-600 text-primary-600 bg-primary-50/50'
+                                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                                        }`}
+                                >
+                                    <Heart className="h-4 w-4" />
+                                    Prayer Request
+                                </button>
+                                <button
+                                    onClick={() => setActiveTab('donation')}
+                                    className={`flex-1 py-4 px-6 text-center text-sm font-medium transition-colors duration-200 focus:outline-none flex items-center justify-center gap-2 ${activeTab === 'donation'
+                                        ? 'border-b-2 border-primary-600 text-primary-600 bg-primary-50/50'
+                                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                                        }`}
+                                >
+                                    <Upload className="h-4 w-4" />
+                                    Offering/Tithe/Donation Upload
+                                </button>
+                            </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                        <div>
-                                            <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">First name</label>
-                                            <div className="mt-1">
-                                                <input type="text" name="first-name" id="first-name" autoComplete="given-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                            <div className="px-6 py-8 sm:p-10">
+                                {activeTab === 'prayer' ? (
+                                    <form action="https://formsubmit.co/Adaoranasir@gmail.com" method="POST" className="grid grid-cols-1 gap-y-6 animate-fadeIn">
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Send a Prayer Request</h3>
+                                        <input type="hidden" name="_subject" value="New Prayer Request from CMPM Website" />
+                                        <input type="hidden" name="_template" value="table" />
+                                        <input type="hidden" name="_captcha" value="false" />
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label htmlFor="prayer-first-name" className="block text-sm font-medium text-gray-700">First name</label>
+                                                <div className="mt-1">
+                                                    <input type="text" name="first-name" id="prayer-first-name" autoComplete="given-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="prayer-last-name" className="block text-sm font-medium text-gray-700">Last name</label>
+                                                <div className="mt-1">
+                                                    <input type="text" name="last-name" id="prayer-last-name" autoComplete="family-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label htmlFor="prayer-email" className="block text-sm font-medium text-gray-700">Email</label>
+                                                <div className="mt-1">
+                                                    <input type="email" name="email" id="prayer-email" autoComplete="email" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="prayer-phone" className="block text-sm font-medium text-gray-700">Phone</label>
+                                                <div className="mt-1">
+                                                    <input type="tel" name="phone" id="prayer-phone" autoComplete="tel" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
                                             </div>
                                         </div>
                                         <div>
-                                            <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">Last name</label>
+                                            <label htmlFor="prayer-message" className="block text-sm font-medium text-gray-700">Prayer Request</label>
                                             <div className="mt-1">
-                                                <input type="text" name="last-name" id="last-name" autoComplete="family-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                <textarea id="prayer-message" name="message" rows="4" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" placeholder="How can we pray for you?"></textarea>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                                        <div className="mt-1">
-                                            <input type="email" name="email" id="email" autoComplete="email" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                        <div>
+                                            <button type="submit" className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-md text-base font-medium rounded-lg text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all transform hover:-translate-y-0.5">
+                                                Send Prayer Request
+                                            </button>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                                        <div className="mt-1">
-                                            <textarea id="message" name="message" rows="4" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" placeholder="How can we pray for you?"></textarea>
+                                    </form>
+                                ) : (
+                                    <form action="https://formsubmit.co/Adaoranasir@gmail.com" method="POST" encType="multipart/form-data" className="grid grid-cols-1 gap-y-6 animate-fadeIn">
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Upload Proof of Payment</h3>
+                                        <input type="hidden" name="_subject" value="New Donation Proof from CMPM Website" />
+                                        <input type="hidden" name="_template" value="table" />
+                                        <input type="hidden" name="_captcha" value="false" />
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label htmlFor="donation-first-name" className="block text-sm font-medium text-gray-700">First name</label>
+                                                <div className="mt-1">
+                                                    <input type="text" name="first-name" id="donation-first-name" autoComplete="given-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="donation-last-name" className="block text-sm font-medium text-gray-700">Last name</label>
+                                                <div className="mt-1">
+                                                    <input type="text" name="last-name" id="donation-last-name" autoComplete="family-name" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <button type="submit" className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-md text-base font-medium rounded-lg text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all transform hover:-translate-y-0.5">
-                                            Send Message
-                                        </button>
-                                    </div>
-                                </form>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label htmlFor="donation-email" className="block text-sm font-medium text-gray-700">Email</label>
+                                                <div className="mt-1">
+                                                    <input type="email" name="email" id="donation-email" autoComplete="email" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="donation-phone" className="block text-sm font-medium text-gray-700">Phone</label>
+                                                <div className="mt-1">
+                                                    <input type="tel" name="phone" id="donation-phone" autoComplete="tel" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            <div>
+                                                <label htmlFor="donation-type" className="block text-sm font-medium text-gray-700">Type of Giving</label>
+                                                <div className="mt-1">
+                                                    <select id="donation-type" name="type" required className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors">
+                                                        <option value="">Select an option</option>
+                                                        <option value="Tithe">Tithe</option>
+                                                        <option value="Offering">Offering</option>
+                                                        <option value="Donation">Donation</option>
+                                                        <option value="Seed Faith">Seed Faith</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label htmlFor="amount" className="block text-sm font-medium text-gray-700">Amount Sent</label>
+                                                <div className="mt-1">
+                                                    <input type="text" name="amount" id="amount" required placeholder="e.g. 5000" className="py-3 px-4 block w-full shadow-sm focus:ring-primary-500 focus:border-primary-500 border-gray-300 rounded-lg border bg-gray-50 focus:bg-white transition-colors" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label htmlFor="proof" className="block text-sm font-medium text-gray-700">Upload Proof (Screenshot/Receipt)</label>
+                                            <div className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-lg transition-colors cursor-pointer ${fileError ? 'border-red-300 bg-red-50' : 'border-gray-300 hover:bg-gray-50'}`}>
+                                                <div className="space-y-1 text-center">
+                                                    <Upload className={`mx-auto h-12 w-12 ${fileError ? 'text-red-400' : 'text-gray-400'}`} />
+                                                    <div className="flex text-sm text-gray-600 justify-center">
+                                                        <label htmlFor="file-upload" className="relative cursor-pointer rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500">
+                                                            <span>{fileName || 'Upload a file'}</span>
+                                                            <input id="file-upload" name="proof" type="file" className="sr-only" required accept="image/*,.pdf" onChange={handleFileChange} />
+                                                        </label>
+                                                        {!fileName && <p className="pl-1">or drag and drop</p>}
+                                                    </div>
+                                                    <p className={`text-xs ${fileError ? 'text-red-500' : 'text-gray-500'}`}>
+                                                        {fileError || 'PNG, JPG, PDF up to 5MB'}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button type="submit" className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-md text-base font-medium rounded-lg text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all transform hover:-translate-y-0.5">
+                                                Submit Proof of Payment
+                                            </button>
+                                        </div>
+                                    </form>
+                                )}
                             </div>
                         </div>
                     </div>

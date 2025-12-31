@@ -60,7 +60,10 @@ const Footer = () => {
                                 <div className="bg-gray-900 p-2 rounded-lg shrink-0 group-hover:bg-primary-900/50 transition-colors">
                                     <Phone className="h-5 w-5 text-primary-500" />
                                 </div>
-                                <span className="font-light">+234 123 456 7890</span>
+                                <div className="flex flex-col">
+                                    <span className="font-light">+234 703 508 4558</span>
+                                    <span className="font-light">+234 706 847 3984</span>
+                                </div>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="bg-gray-900 p-2 rounded-lg shrink-0 group-hover:bg-primary-900/50 transition-colors">
