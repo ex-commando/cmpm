@@ -74,7 +74,7 @@ const Footer = () => {
 
                 <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600 font-light">
                     <p>&copy; {new Date().getFullYear()} Christ Messengers Prophetic Ministry. All rights reserved.</p>
-                    <p className="flex items-center gap-1">Designed with <Heart className="h-3 w-3 text-red-900 fill-current" /> by CMPM Media</p>
+                    <p className="flex items-center gap-1">Designed with <Heart className="h-3 w-3 text-red-900 fill-current" /> by CMPM Tech Team</p>
                 </div>
             </div>
         </footer>
