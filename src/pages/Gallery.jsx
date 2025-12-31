@@ -7,11 +7,11 @@ import gallery4 from '../assets/gallery-4.jpg'
 import gallery5 from '../assets/gallery-5.jpg'
 
 const galleryImages = [
-    { id: 1, src: gallery1, alt: "Worship Moment", size: "large" }, // Spans 2 cols on large
+    { id: 1, src: gallery1, alt: "Worship Moment", size: "large" }, // Spans 2x2
     { id: 2, src: gallery2, alt: "Choir Ministration", size: "normal" },
     { id: 3, src: gallery3, alt: "Prophetic Declaration", size: "normal" },
-    { id: 4, src: gallery4, alt: "Service Atmosphere", size: "wide" }, // Spans 2 cols
-    { id: 5, src: gallery5, alt: "Lead Pastor", size: "tall" }, // Spans 2 rows
+    { id: 4, src: gallery4, alt: "Service Atmosphere", size: "normal" },
+    { id: 5, src: gallery5, alt: "Lead Pastor", size: "normal" },
 ]
 
 const Gallery = () => {
@@ -38,7 +38,7 @@ const Gallery = () => {
 
             {/* Gallery Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
                     {galleryImages.map((image, index) => (
                         <motion.div
                             key={image.id}
@@ -47,9 +47,7 @@ const Gallery = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             className={`relative group rounded-2xl overflow-hidden shadow-xl cursor-pointer
-                                ${image.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                                ${image.size === 'wide' ? 'md:col-span-2' : ''}
-                                ${image.size === 'tall' ? 'md:row-span-2' : ''}
+                                ${image.size === 'large' ? 'md:col-span-2 md:row-span-2' : 'md:col-span-1 md:row-span-1'}
                             `}
                         >
                             <img
