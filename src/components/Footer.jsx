@@ -54,7 +54,7 @@ const Footer = () => {
                                 <div className="bg-gray-900 p-2 rounded-lg shrink-0 group-hover:bg-primary-900/50 transition-colors">
                                     <MapPin className="h-5 w-5 text-primary-500" />
                                 </div>
-                                <span className="pt-1 font-light">Angwan Jaraa, Jos north, Plateau state Nigeria</span>
+                                <span className="pt-1 font-light">Angwan Jarawa, Jos north, Plateau state Nigeria</span>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="bg-gray-900 p-2 rounded-lg shrink-0 group-hover:bg-primary-900/50 transition-colors">

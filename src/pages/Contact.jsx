@@ -27,7 +27,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="text-lg font-bold text-gray-900">Visit Us</h3>
-                                <p className="mt-1 text-gray-600">Angwan Jaraa, Jos north, Plateau state Nigeria</p>
+                                <p className="mt-1 text-gray-600">Angwan Jarawa, Jos north, Plateau state Nigeria</p>
                                 <p className="text-sm text-gray-400 mt-2">Headquarters</p>
                             </div>
                         </div>
